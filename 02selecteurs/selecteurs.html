@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>selecteurs Javascript</title>
+    <style>
+    </style>
+    <!-- <script>
+        ici je déclare mon script dans la balise head grâce à la fonction window.onload 
+        window.onload = function() {
+         // SRELECTION NATURELLE D'ID
+         var monId = titre;
+         console.log(monId);
+ 
+         // SELECTION BY ID 
+         var monId2 = document.getElementById('titre');
+         console.log(monId2);
+ 
+         //SELECTION BY CLASSNAME
+         var mesClasses = document.getElementsByClassName('avion');
+         console.log(mesClasses);
+         } //fin de mon window.onload ne pas effacer
+     </script> -->
+
+</head>
+<body>
+    <h2 id="titre">Mon titre de niveau 2</h2>
+    <div class="avion">AirBus1</div>
+    <div class="avion">AirBus2</div>
+    <div class="avion">AirBus3</div>
+
+    <p id="first">Paragraphe 1</p>
+    <p>Paragraphe 2</p>
+    <p title="InfoBulle"> paragraphe 3</p>
+    <p>paragraphe 4</p>
+    <p>paragraphe 5</p>
+
+
+    <script>
+
+        // SRELECTION NATURELLE D'ID
+        var monId = titre;
+        console.log(monId);
+
+        // SELECTION BY ID 
+        var monId2 = document.getElementById('titre');
+        console.log(monId2);
+
+        //SELECTION BY CLASSNAME
+        var mesClasses = document.getElementsByClassName('avion');
+        // je récupére un ensemble : une collection html 
+        console.log(mesClasses);
+        // je peux atteindre un des éléments de la collection grâce à l'indice [1] 
+        console.log(mesClasses[1]);
+
+
+        // innerHTML permet de définir le contenu de la balise et le sélectionner dans le but de l'identifier, modifer ou le le manipuler autrement 
+        console.log(mesClasses[1].innerHTML);
+        mesClasses[1].innerHTML = 'Nouveau contenu '; // le résultat est sur la page pas dans la console
+
+        // modifier le contenu du h2 pur marquer 'nouveau titre' 
+
+        // récupérer dans une variable le selection de mon id 
+        var monId2 = document.getElementById('titre');
+        console.log(monId2.innerHTML);
+
+        // définir un nouveau innerHTML à cette variable 
+        monId2.innerHTML = 'Nouveau titre';
+
+        // SELECTION BY TAGNAME
+
+        var mesP = document.getElementsByTagName('p');
+        console.log(mesP);
+        console.log(mesP[1].innerHTML);
+
+        for(var i=0; i< mesP.length; i++){
+            document.write(mesP[i].innerHTML + '<br>');
+            mesP[i].style.color = 'red';
+            mesP[i].style.marginTop = '30px';
+            //liste des mots clés à appliquer avec .style
+            // https://www.w3schools.com/jsref/dom_obj_style.asp 
+        }
+
+        //querySelector
+
+        //por selectionner une et la première balise
+        var query = document.querySelector('p'); 
+        console.log(query);
+        var query2 = document.querySelector('h2#titre');
+        console.log(query2);
+
+        //pour sélectionner tout les balise en ensemble
+        var query3 = document.querySelectorAll('.avion');
+        console.log(query3[2]);
+
+
+
+
+        // selectionner airbus3 : modifie son contenu en "mon airbus" 
+        //de plus , styliser cet airbus 3 pour y appliquer un fond bleu,n un texte blanc et en gras
+        var query4 = document.querySelectorAll('div.avion');
+
+        console.log(query4[2].innerHTML);
+
+        // for(i=0; i< query4.length; i++){
+        //     console.log(query4[i].innerHTML);
+        // }
+        query4[2].innerHTML = 'Mon airbus';
+
+        // console.log(query4[2].innerHTML);
+        query4[2].style.backgroundColor = 'blue';
+        query4[2].style.color = '#ffffff';
+        query4[2].style.fontWeight= 'bold';
+
+
+
+
+    
+        
+
+        
+    </script>
+    
+</body>
+</html>
