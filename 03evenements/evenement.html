@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Evenements Javascript</title>
+    <style>
+        #div1 {
+            background-color: purple;
+            color: #ffff;
+            padding: 10px;
+        }
+        #div2 {
+            background-color: gray;
+            color: #ffff;
+            padding: 10px;
+        }
+
+        .parag {
+            background-color: palevioletred;
+            color: #ffff;
+            padding: 10px;
+        }
+
+        #div3 {
+            background-color:goldenrod;
+            color: #ffff;
+            padding: 10px;
+        }
+
+        #div4 {
+            background-color:burlywood;
+            color: #ffff;
+            padding: 10px;
+        }
+        #prenom {
+            width: 50px;
+        }
+        .clicBouton{
+            background: red;
+        }
+    </style>
+    
+</head>
+<body>
+    <h2 onclick="fDiv1();">Click</h2>
+    <div id="div1">DIV1</div>
+    <h2>DblClick</h2>
+    <div id="div2">DIV2</div>
+    <h2>Click par fonction anonyme</h2>
+    <p class="parag">Paragraphe</p>
+    <h2>Survol (mouseoover, mouseout)</h2>
+    <div id="div3">DIV3</div>
+    <div id="div4">DIV4</div>
+    <h2>Focus</h2>
+    <form action="" method=""> <!--ici en methode soit GET: informations pas sécurisés et sont envoyer et affiché dasn l'URL,  soit POST: les informations sont sécurisés et sont transformés  mais en sécurité -->
+        <label for="prenom">veuillez saisir votre prénom</label>
+        <input type="text" id="prenom" name="lePrenom">
+        <input type="submit" id="submit" name="submit" value="OK">
+    
+    </form>
+    <script>
+      
+
+            //simple click
+            // le addEvenListener a besoin de deux argument : 1- décrire le mot clé correspondenat à l'éve,nement (ici le click) 2- LA FONCTION executée lors de l'évenement (ici la fonction fDiv1) 
+
+            document.querySelector('#div1').addEventListener('click', fDiv1);
+            function fDiv1(){
+                 alert('élément est cliquée !');
+            }
+            
+            //double(Dbl)click
+
+            var maDiv2 = document.getElementById('div2');
+            maDiv2.addEventListener('dblclick', fDiv2);
+            function fDiv2(){ 
+                // alert ('Div2 est cliquée !');
+                }
+
+
+            // avec une fonction anonyme autoexecutante
+            // sur ce paragraphe, plutot qu'appeler une fonction existante nous executans une fonction anonyme au moment du click 
+            document.querySelector('.parag').addEventListener('click',function(){alert('par fonction anonyme');});
+
+
+            //survoler un élément
+            //mouseover
+            document.querySelector('#div3').addEventListener('mouseover', fDiv3);
+            function fDiv3(){
+                // alert('Div survolée');
+                }
+            
+
+            // mouseout
+            document.querySelector('#div4').addEventListener('mouseout', fDiv4);
+            function fDiv4(){
+                // alert('J\'arréte de survoler');
+                // ici j'utilise "this" parceque je fais le changement sur l'élément lui même 
+                this.innerHTML = "Ma DIV 4";
+                this.style.color='#000';
+                // comme je peux intéragir sur un autre élément grâce à la même fontion 
+                document.querySelector('#div3').style.color ='green';
+
+            }
+
+
+
+            //Focus pour les formulaire
+            document.querySelector('#prenom').addEventListener('focus', inputFocus);
+            function inputFocus(){
+                // alert('champs focus');
+                this.style.width ="250px";
+
+            }
+           
+            document.querySelector('#prenom').addEventListener('blur', inputBlur);
+            function inputBlur(){
+                // alert('champs blur');
+                this.style.width ="50px";
+                
+            }
+
+            document.querySelector('#submit').addEventListener('click', inputSubmit);
+            function inputSubmit(event){
+                event.preventDefault(); //permet d'annuler le téléchargement de la page après validation du formulaire les information ne sont pas envoyer ni en GET ni en POST
+                // this.style.background = 'red';
+                // autrement
+                this.classList.add('clicBouton');
+                console.log(document.querySelector('#prenom').value);
+            }
+
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>
