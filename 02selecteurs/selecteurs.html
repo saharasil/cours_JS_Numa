@@ -44,9 +44,13 @@
         var monId = titre;
         console.log(monId);
 
+
+
         // SELECTION BY ID 
         var monId2 = document.getElementById('titre');
         console.log(monId2);
+
+
 
         //SELECTION BY CLASSNAME
         var mesClasses = document.getElementsByClassName('avion');
@@ -56,12 +60,15 @@
         console.log(mesClasses[1]);
 
 
+
+
         // innerHTML permet de définir le contenu de la balise et le sélectionner dans le but de l'identifier, modifer ou le le manipuler autrement 
         console.log(mesClasses[1].innerHTML);
         mesClasses[1].innerHTML = 'Nouveau contenu '; // le résultat est sur la page pas dans la console
 
-        // modifier le contenu du h2 pur marquer 'nouveau titre' 
+        
 
+        // modifier le contenu du h2 pur marquer 'nouveau titre' 
         // récupérer dans une variable le selection de mon id 
         var monId2 = document.getElementById('titre');
         console.log(monId2.innerHTML);
