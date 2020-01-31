@@ -101,6 +101,7 @@
         console.log(nom);
         console.log(genre);
         document.write('<br>'+prenom+'</br>');
+
         
         var fruits = 'Pomme';
         console.log(fruits);
@@ -109,18 +110,18 @@
         console.log(fruits);
         fruits += ' mangue';
         console.log(fruits);
-                // dans le cas des nombre 
+                // dans le cas des nombres 
         var note_eval = 12;
         console.log(note_eval);
         note_eval += 2;
-        console.log(note_eval);
+        console.log(note_eval); // resultat = 14
 
 
 
         var  quelqueChose;
-        console.log(quelqueChose); //affiche undefined parceque la variable n'été pas affecté au par avant ; je peux la garder son contenu mais elle restera indéfinie
+        console.log(quelqueChose); //affiche undefined parceque la variable n'été pas affecté au par avant ; je peux la garder sans contenu mais elle restera indéfinie
 
-        // console.log(autreChose);          //affiche une erreur not defined parceque la variable n'été jamais déclaré ce message est à éviter
+        // console.log(autreChose);   -->  //affiche une erreur : not defined parceque la variable n'été jamais déclaré ce message est à éviter
         
 
         // je peux déclarer une variable avec le mot clef 'let' (variable let) 
@@ -175,11 +176,11 @@
         var monChiffre2 = '20';
         console.log(monChiffre+monChiffre2);
         console.log(typeof(monChiffre));
-        // alert("bonjour\naurevoir")
+        // alert("bonjour \n aurevoir")
 
 
         // var ageUtilisateur = prompt('quel est votre age ?');
-        // console.log(typeof(ageUtilisateur));
+        // console.log(typeof(ageUtilisateur)); //ici le resultat c'est string --> le prompt a  toujours un typeof string 
 
 
          /*---------------------------------------------------
@@ -192,6 +193,9 @@
         document.write(BOUGE_PAS+ '<br>');
         // const BOUGE_PAS = 'nouveau contenu'; induirades messages d'erreur que d'essayer de redéfinir une constante 
 
+
+
+
         /*---------------------------------------------------
         -------------------6 CONCATENATION ----------------------
         ----------------------------------------------------*/
@@ -202,19 +206,25 @@
         // nous concatenons les string avec le symbole + 
 
         var prenom = 'Bruce' , nom='Wayne';
+
         // ecrire dans le document "Bruce Wayne" 
         document.write( prenom + ' ' + nom + '<br>');
 
 
         document.write( '<strong>' + prenom +'</strong> ' + nom +'<br>');
-
-        // realiser um pompt demandant son age a son utilisateur  recuperer cette donnée et l'utiliser pour afficher : vous avez XX ans
-        // var sonAge1 = prompt('entrez votre age');
-        // document.write('vous avez ' + sonAge1 + ' ans !' + '<br>' );
         document.write('<strong style="color: green;"> ' + prenom + ' ' + nom + '</strong>' +  '<br>');
 
+
+
+        // realiser um pompt demandant son age a son utilisateur  récuperer cette donnée et l'utiliser pour afficher : vous avez XX ans :
+                // var sonAge1 = prompt('entrez votre age');
+                // document.write('vous avez ' + sonAge1 + ' ans !' + '<br>' );
         // on peut faire autrement et on aura le même résultat 
-        // document.write('vous avez ' + prompt('entrez votre age') + ' ans !' );
+                // document.write('vous avez ' + prompt('entrez votre age') + ' ans !' );
+
+
+
+
 
          /*---------------------------------------------------
         ---------------7 OPERATEURS ARITHMETIQUES-------------
@@ -242,7 +252,7 @@
         var modulo = 10 % 3;
         document.write(modulo + '<br>'); //resultat 1
 
-
+            //application sur les opérateurs
         var chiffre1 = 10, chiffre2 = 5;
 
         var resultat = chiffre1 + chiffre2 ; //tester avec + - * / %
@@ -253,11 +263,13 @@
         document.write(chiffre3 + '<br>');
         chiffre3 += 5;
         document.write(chiffre3 + '<br>');   
+
         chiffre3 -= 5; //cela fonctionne avec tout les opérateurs /= , %= , *= 
         document.write(chiffre3 + '<br>');   
 
-        // recuperer dans un prompt la valeur souhaité par l'utilisateur 
-        // envoyer yne alerte indiquant le resultat au carré et au cube
+        //exercice:
+            // recuperer dans un prompt la valeur souhaité par l'utilisateur 
+            // envoyer une alerte indiquant le resultat au carré et au cube
 
         var valeur = prompt('entrez votre valeur');
         console.log(valeur) //pour voir la valeur sur la console 
@@ -268,11 +280,17 @@
         // document.write('valeur au cube : ' + valeurCube + '<br>');
         alert( 'resultat au carré: ' + valeurCarre + "\n" + 'resultat au cube : ' + valeurCube );
 
+
+
         /*---------------------------------------------------
         ---------------8 LES CONDITIONS ---------------------
         ----------------------------------------------------*/
         document.write('<h2> 8- LES CONDITIONS </h2>');
+
+
         var a = 10, b = 5, c = 2;
+
+        // if 
 
         if(a > b){
             document.write('A  est supérieur à B' + '<br>');
@@ -283,7 +301,7 @@
         }
 
         if(a == b){
-            // ici pour dire si a = b c'est à dire le = c'est pour l'égalité et ce n'est pa le = d'affectation 
+            // ici pour dire si a = b c'est à dire le == c'est pour l'égalité et ce n'est pa le = d'affectation 
             // ici on compare la valeur elle même
             document.write(' A est égale à B' + '<br>');
         }
@@ -291,7 +309,9 @@
             document.write('A est différent de B' + '<br>');
         }
 
+
         // if et AND(&&)
+
         if(a > b && b > c){
             document.write('ok pour les deux conditions' + '<br>');
         }
