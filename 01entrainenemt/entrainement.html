@@ -73,7 +73,7 @@
 
 
         /*---------------------------------------------------
-        -------------------3 VARIABLES ----------------------
+        -------------------3- VARIABLES ----------------------
         ----------------------------------------------------*/
 
         document.write('<h2> 3 -VARIABLES  </h2>');
@@ -110,6 +110,7 @@
         console.log(fruits);
         fruits += ' mangue';
         console.log(fruits);
+
                 // dans le cas des nombres 
         var note_eval = 12;
         console.log(note_eval);
@@ -166,7 +167,7 @@
         var choix = true ;
         console.log(choix);
 
-        //typeof permet de vérifier le type d'une variable
+                //typeof permet de vérifier le type d'une variable
 
         document.write(typeof(monTexte)+ '<br>');
         document.write(typeof(chiffre)+ '<br>');
@@ -174,7 +175,7 @@
 
         var monChiffre ='50';
         var monChiffre2 = '20';
-        console.log(monChiffre+monChiffre2);
+        console.log(monChiffre + monChiffre2);
         console.log(typeof(monChiffre));
         // alert("bonjour \n aurevoir")
 
@@ -184,11 +185,11 @@
 
 
          /*---------------------------------------------------
-        -------------------5 CONSTANTES ----------------------
+        -------------------5- CONSTANTES ----------------------
         ----------------------------------------------------*/
         document.write('<h2> 5 - CONSTANTES </h2>');
 
-        // les constantes ne sont jamais destinée à varier, elles sont déclarées par le mot clef const et par convention nous les nomerons tout en majuscule, afin de les différencier des variables 
+        // les constantes ne sont jamais destinée à varier, elles sont déclarées par le mot clé const et par convention nous les nomerons tout en majuscule, afin de les différencier des variables 
         const BOUGE_PAS = 'ma constante impossible à modifier';
         document.write(BOUGE_PAS+ '<br>');
         // const BOUGE_PAS = 'nouveau contenu'; induirades messages d'erreur que d'essayer de redéfinir une constante 
@@ -352,16 +353,20 @@
         // isNAN (is not a Number)
 
         var chiffre4 = 50, chiffre5 = '100', chiffre6 ='vingt';
-        if(!isNaN(chiffre4)){
-            document.write('<span style="background-color: green;">ceci : ' + chiffre4 + ',  est bien un nombre</span>');
+        if(!isNaN(chiffre6)){
+            document.write('<span style="background-color: green;">ceci : ' + chiffre6 + ',  est bien un nombre</span>');
         }
         else{
-            document.write('<span style="background-color: red;">>ceci : ' + chiffre4 + ',  n\'est pas un nombre</span>');
+            document.write('<span style="background-color: red;">ceci : ' + chiffre6 + ',  n\'est pas un nombre</span>');
         }
+
+
+
 
         var total = chiffre4 + chiffre5;
         console.log(total);
-        // le parseInt() est une méthode qui me permetta,nt de transfpormer un string en number
+
+        // le parseInt() est une méthode qui me permet de transformer un string en number
         console.log(typeof(chiffre5));
         var chiffre7 = parseInt(chiffre5);
         console.log(typeof(chiffre7)); 
@@ -383,7 +388,7 @@
         console.log(typeof(chiffre9));
 
         // CONDITION SWITCH 
-        var couleur = 'etetre';
+        var couleur = 'rouge';
         switch(couleur){
             case 'bleu' :
                 document.write('vous aimez le bleu <br>');
@@ -396,7 +401,6 @@
             break;
             default :
                 document.write('vous aimez ni le bleu ni le rouge ni le vert <br>');
-            break;
 
         }
 
@@ -454,7 +458,7 @@
 
         Inférieur ou égale (<=) renvoyer TRUE si l'operande de gauche est inférieur OU égale à celle de droite 
 
-        CONCLUSION : une condition renvoie toujours TRUE ou FALSE et les instruction de la condition ne seront executées QUE si la valeur de retour en ligne est TRUE
+        CONCLUSION : une condition renvoie toujours TRUE ou FALSE et les instructions de la condition ne seront executées QUE si la valeur de retour en ligne est TRUE
         inNaN (is Not a number) va renvoyer True si l'élément testé est bien différent d'un nombre (on utilisera !insNaN pour vérifier que l'élément soit bien un nombre)
 
         Javascript compte 3  operateurs logique 
@@ -472,8 +476,8 @@
             false && false => FALSE
 
         L'opérateur OR
-        Il s'écrit ||. Il evalue le résultat en TRUE si les deux expressions sont TRUE.
-        Si l'une des expressions est traitée en false, alors le résultat sera false.
+        Il s'écrit ||. Il evalue le résultat en TRUE si l'une des deux expressions est TRUE.
+        Si l'une des expressions est traitée en false, alors le résultat sera TRUE.
 
             true || true => TRUE
             false || true => TRUE
@@ -481,12 +485,15 @@
             false || false => FALSE
 
         L'opérateur NOT (L'inverse de)
-        Il s'écrit ||. Il transforme ce qui est TRUE en FALSE, e ce qui est FALSE en TRUE.
+        Il s'écrit !. Il transforme ce qui est TRUE en FALSE, e ce qui est FALSE en TRUE.
            
             !true => FALSE
             !false => TRUE
 
 */
+
+
+
 
        /*----------------------------------------------------------
         ----------------------10 LES BOUCLES -----------------------
@@ -510,7 +517,7 @@
         // boucle for 
         for(var p=0; p <=6; p++ ){
             if(p === 6){
-                document.write(p+'<br>');
+                document.write( p +'<br>');
             }
             else{
                 document.write(p + '---');
@@ -540,12 +547,13 @@
         // indexOf retournera La position de la première lettre de 'Eddy' dans la phrase
         console.log(phrase.indexOf('Eddy'));
 
-        // substr permet de récupérer le morceaux d'une chaine de caractère, il prend deux arguments : 1er ou commence la découpe, second : combienbien de caractères
+        // substr permet de récupérer le morceaux d'une chaine de caractère, il prend deux arguments : 1er ou commence la découpe, second : combient de caractères
         phrase = 'Bonjour Pierre comment vas-tu ?';
         var mot ='Pierre';
         console.log(phrase.substr(phrase.indexOf('Pierre'),mot.length));
 
         // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/prototype
+
         // tolowerCase / toUpperCase
 
             phrase = 'tout est en miniscule';
@@ -553,6 +561,10 @@
 
             phrase = phrase.toUpperCase();
             console.log(phrase.toUpperCase());
+
+
+
+
 
         /*----------------------------------------------------------
         ----------------------12 FONCTIONS UTILISATEURS -------------

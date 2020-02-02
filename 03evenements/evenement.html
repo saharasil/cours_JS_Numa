@@ -64,11 +64,12 @@
       
 
             //simple click
-            // le addEvenListener a besoin de deux argument : 1- décrire le mot clé correspondenat à l'éve,nement (ici le click) 2- LA FONCTION executée lors de l'évenement (ici la fonction fDiv1) 
+
+            // le addEvenListener a besoin de deux argument : 1- décrire le mot clé correspondenat à l'événement (ici le click) 2- LA FONCTION executée lors de l'évenement (ici la fonction fDiv1) 
 
             document.querySelector('#div1').addEventListener('click', fDiv1);
             function fDiv1(){
-                 alert('élément est cliquée !');
+                //  alert('élément est cliquée !');
             }
             
             //double(Dbl)click
@@ -81,11 +82,13 @@
 
 
             // avec une fonction anonyme autoexecutante
+
             // sur ce paragraphe, plutot qu'appeler une fonction existante nous executans une fonction anonyme au moment du click 
             document.querySelector('.parag').addEventListener('click',function(){alert('par fonction anonyme');});
 
 
             //survoler un élément
+
             //mouseover
             document.querySelector('#div3').addEventListener('mouseover', fDiv3);
             function fDiv3(){
@@ -97,6 +100,7 @@
             document.querySelector('#div4').addEventListener('mouseout', fDiv4);
             function fDiv4(){
                 // alert('J\'arréte de survoler');
+
                 // ici j'utilise "this" parceque je fais le changement sur l'élément lui même 
                 this.innerHTML = "Ma DIV 4";
                 this.style.color='#000';
@@ -126,6 +130,7 @@
             function inputSubmit(event){
                 event.preventDefault(); //permet d'annuler le téléchargement de la page après validation du formulaire les information ne sont pas envoyer ni en GET ni en POST
                 // this.style.background = 'red';
+                
                 // autrement
                 this.classList.add('clicBouton');
                 console.log(document.querySelector('#prenom').value);
