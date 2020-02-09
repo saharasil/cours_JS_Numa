@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Révsion</title>
+</head>
+<body>
+    <h1>Titre principale</h1>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <script>
+
+    /************************************************ REVISION  **************************************************/
+        // FONCTION PREDEFINIES / Math.random() ET  replace() 
+        document.getElementById('p1').innerHTML = Math.random();
+        var phrase1 = 'je suis une femme';
+        var phrase2 =  phrase1.replace('je', 'Je');
+        document.write(phrase2);
+
+
+
+
+    /************************************************ EXERCICES *************************************************/
+
+        // Utilisez des caractères d'échappement pour alerter We are "Vikings".
+            var txt = " We are \"vikings\"  ";
+                alert(txt);
+        //Utilisez la méthode slice: tranche pour renvoyer le mot "bananes".
+            // slice() : Extrait une section d'une chaîne et renvoie une nouvelle chaîne.
+                var txt = "I can eat bananas all day";
+                var x = txt.slice( 10, 17 );
+                console.log(x);
+        //Utilisez la méthode String correcte pour remplacer le mot «Hello» par le mot «Welcome»
+                var txt = "Hello World";
+                txt = txt.replace("Hello", "Welcome"); 
+                console.log(txt)
+        //Alerter le nombre d'éléments dans un tableau, en utilisant la bonne méthode de tableau.
+                var cars = ["Volvo", "Jeep", "Mercedes"];
+                alert(cars.length);
+
+        //Utilisez la splice()méthode pour supprimer "Orange" et "Apple" de fruits.
+            var fruits = ["Banane", "Orange", "Pomme", "Kiwi"];
+            fruit = fruits.splice (1, 2);
+            console.log( fruit);
+            console.log( fruits);
+
+        //Choisissez l'opérateur conditionnel (ternaire) correct pour alerter "Trop jeune" si l'âge est inférieur à 18 ans, sinon alerter "Assez vieux".
+
+            var age = n;
+            var votable = (âge < 18) ?  "Trop jeune" : "Assez vieux";
+            alerte (votable);
+
+            
+    </script>
+</body>
+</html>

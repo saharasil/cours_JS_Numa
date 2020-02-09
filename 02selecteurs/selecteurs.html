@@ -29,7 +29,9 @@
     <h2 id="titre">Mon titre de niveau 2</h2>
     <div class="avion">AirBus1</div>
     <div class="avion">AirBus2</div>
+    <p class="avion"></p>
     <div class="avion">AirBus3</div>
+    
 
     <p id="first">Paragraphe 1</p>
     <p>Paragraphe 2</p>
@@ -93,14 +95,16 @@
                 // https://www.w3schools.com/jsref/dom_obj_style.asp 
             }
 
-        //querySelector
+        
 
-        //por selectionner une et la première balise
+        //querySelector pour selectionner une seule et la première balise
             var query = document.querySelector('p'); 
             console.log(query);
 
             var query2 = document.querySelector('h2#titre');
             console.log(query2);
+
+
 
         //pour sélectionner tout les balise en ensemble
             var query3 = document.querySelectorAll('.avion');
