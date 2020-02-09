@@ -28,9 +28,9 @@
     </div>
     <hr>
     <div>
-        <i class="fas fa-angle-left" ></i>
+        <i class="fas fa-angle-left"  id="gauche"></i>
         <img src="img/a.jpg" alt="texte alternatif" id="carousel" >
-        <i class="fas fa-angle-right" ></i>
+        <i class="fas fa-angle-right" id="droite" ></i>
     </div>
 
 
@@ -43,7 +43,7 @@
              });
 
         //changer une image grâce à une fléche
-        document.getElementsByClassName('fa-angle-left').addEventListener('click', tourneImage);
+        document.getElementById('gauche').addEventListener('click', tourneImage);
         function tourneImage(){
            var img = document.getElementById('carousel').getAttribute('src');
         switch(img){
@@ -71,36 +71,36 @@
             }
         }
 
-        
-        // function tourneImage2(){
+        document.getElementById('droite').addEventListener('click', tourneImage2);
+        function tourneImage2(){
            
-        //     var img2 = document.getElementById('carousel').getAttribute('src');
+            var img2 = document.getElementById('carousel').getAttribute('src');
            
-        // switch(img2){
-        //     case 'img/e.jpg' :
-        //     document.getElementById('carousel').src ='img/d.jpg';
-        //     break;
+        switch(img2){
+            case 'img/e.jpg' :
+            document.getElementById('carousel').src ='img/d.jpg';
+            break;
 
-        //     case 'img/d.jpg' :
-        //     document.getElementById('carousel').src ='img/c.jpg';
-        //     break;
+            case 'img/d.jpg' :
+            document.getElementById('carousel').src ='img/c.jpg';
+            break;
 
-        //     case 'img/c.jpg' :
-        //     document.getElementById('carousel').src ='img/b.jpg';
-        //     break;
+            case 'img/c.jpg' :
+            document.getElementById('carousel').src ='img/b.jpg';
+            break;
 
-        //     case 'img/b.jpg' :
-        //     document.getElementById('carousel').src ='img/a.jpg';
-        //     break;
+            case 'img/b.jpg' :
+            document.getElementById('carousel').src ='img/a.jpg';
+            break;
 
-        //     case 'img/a.jpg' :
-        //     document.getElementById('carousel').src ='img/e.jpg';
-        //     break;
+            case 'img/a.jpg' :
+            document.getElementById('carousel').src ='img/e.jpg';
+            break;
            
 
-        //     }
+            }
             
-        // }
+        }
     </script>
 </body>
 </html>
