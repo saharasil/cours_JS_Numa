@@ -92,7 +92,7 @@
             //mouseover
             document.querySelector('#div3').addEventListener('mouseover', fDiv3);
             function fDiv3(){
-                // alert('Div survolée');
+                alert('Div survolée');
                 }
             
 
@@ -112,6 +112,7 @@
 
 
             //Focus pour les formulaire
+
             document.querySelector('#prenom').addEventListener('focus', inputFocus);
             function inputFocus(){
                 // alert('champs focus');
@@ -121,7 +122,7 @@
            
             document.querySelector('#prenom').addEventListener('blur', inputBlur);
             function inputBlur(){
-                // alert('champs blur');
+                alert('champs blur');
                 this.style.width ="50px";
                 
             }
@@ -130,7 +131,6 @@
             function inputSubmit(event){
                 event.preventDefault(); //permet d'annuler le téléchargement de la page après validation du formulaire les information ne sont pas envoyer ni en GET ni en POST
                 // this.style.background = 'red';
-                
                 // autrement
                 this.classList.add('clicBouton');
                 console.log(document.querySelector('#prenom').value);

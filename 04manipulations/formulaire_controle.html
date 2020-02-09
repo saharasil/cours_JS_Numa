@@ -7,29 +7,35 @@
     <title>Formulaire - contrôle </title>
 </head>
 <body>
-    <form name= "formulaire" action="#" method="get"> 
+    <form name= "formulaire" action="" method="post"> 
         <label for="pseudo">Pseudo</label>
         <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo">
         <br>
         <label for="mdp">Mot de passe</label>
         <input type="password" name="mdp" id="mdp" placeholder="Mot de passe...">
         <br>
-        <input type="submit" name="submit" id="submit" value="OK" onclick="resultat();">
+        <input type="submit" name="submit" id="submit" value="OK">
     </form>
     <script>
         
-        function resultat(){
+
+        document.querySelector('#submit').addEventListener('click', inputSubmit, resultat);
+           
+            function resultat(){
             var longeurPseudo = document.formulaire.pseudo.value.length;
             var longeurMdp = document.formulaire.mdp.value.length;
 
-            if(longeurPseudo < 5 || longeurPseudo > 15){
-                alert('Le pseudo doit comporter entre 5 et 15 caractère');
+                if(longeurPseudo < 5 || longeurPseudo > 15){
+                    alert('Le pseudo doit comporter entre 5 et 15 caractère');
+                }
+                if(longeurMdp < 3 || longeurMdp > 15){
+                    alert('Le pseudo doit comporter entre 5 et 15 caractère');
+                } 
             }
-            if(longeurMdp < 3 || longeurMdp > 15){
-                alert('Le pseudo doit comporter entre 5 et 15 caractère');
+            function inputSubmit(event){
+                event.preventDefault(); //permet d'annuler le téléchargement de la page après validation du formulaire les information ne sont pas envoyer ni en GET ni en POST
+               
             }
-
-        }
     </script>
 </body>
 </html>
