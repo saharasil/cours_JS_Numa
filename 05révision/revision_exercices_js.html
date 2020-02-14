@@ -11,9 +11,30 @@
     <h1>Titre principale</h1>
     <p id="p1"></p>
     <p id="p2"></p>
+    <hr>
+
+
+
+    <div id="output">
+        <ol>
+            <input type="checkbox"class="chek"> <li>A propos d'un tuto</li>
+            <input type="checkbox"class="chek"> <li>A propos d'un tuto</li><li>merci</li>
+            <input type="checkbox"class="chek"> <li>A propos d'un tuto</li><li>tuto javascript</li>
+            <input type="checkbox"class="chek"> <li>A propos d'un tuto</li><li>Supprimer les balises </li>
+            <input type="checkbox"class="chek"> <li>A propos d'un tuto</li><li>impossibilité d'accès aux cours</li>
+        <button id="cocher">Cocher tout </button>
+        <button id="décocher"> Décocher tout</button>
+        
+
+
+
+    </div>
+
+
+    
     <script>
 
-    /************************************************ REVISION  **************************************************/
+    /****************************************** REVISION  **************************************************/
         // FONCTION PREDEFINIES / Math.random() ET  replace() 
         document.getElementById('p1').innerHTML = Math.random();
         var phrase1 = 'je suis une femme';
@@ -23,11 +44,11 @@
 
 
 
-    /************************************************ EXERCICES *************************************************/
+    /******************************************* EXERCICES *************************************************/
 
         // Utilisez des caractères d'échappement pour alerter We are "Vikings".
             var txt = " We are \"vikings\"  ";
-                alert(txt);
+                // alert(txt);
         //Utilisez la méthode slice: tranche pour renvoyer le mot "bananes".
             // slice() : Extrait une section d'une chaîne et renvoie une nouvelle chaîne.
                 var txt = "I can eat bananas all day";
@@ -39,7 +60,7 @@
                 console.log(txt)
         //Alerter le nombre d'éléments dans un tableau, en utilisant la bonne méthode de tableau.
                 var cars = ["Volvo", "Jeep", "Mercedes"];
-                alert(cars.length);
+                // alert(cars.length);
 
         //Utilisez la splice()méthode pour supprimer "Orange" et "Apple" de fruits.
             var fruits = ["Banane", "Orange", "Pomme", "Kiwi"];
@@ -48,10 +69,78 @@
             console.log( fruits);
 
         //Choisissez l'opérateur conditionnel (ternaire) correct pour alerter "Trop jeune" si l'âge est inférieur à 18 ans, sinon alerter "Assez vieux".
+        //condition ternaire
+            var age = 18;
+            var votable = (age < 18) ?  "Trop jeune" : "Assez vieux";
+                // alert(votable);
 
-            var age = n;
-            var votable = (âge < 18) ?  "Trop jeune" : "Assez vieux";
-            alerte (votable);
+
+        /* On reçoit un nombre, par exemple var number = 42;. Comment savoir de combien de dizaines (4) et de combien d'unités (2) est composé ce nombre ? Avec l'opérateur modulo !
+
+        Pour savoir combien d'unités sont contenues dans 42, il suffit de faire 42 % 10, ce qui donne 2. Il ne vous reste plus qu'à trouver comment obtenir le nombre de dizaines. */
+
+            var number = 42;
+            var unités = number % 10;
+            console.log(unités);
+             if(unités !== 0){
+	                var dizaines = (number - unités) / 10 ;
+	                // alert('le nombre de dizaine est :' +  dizaines);
+                };
+        
+
+        // Écrivez une boucle while qui se répète 10 fois. Il est vrai qu'une boucle for serait plus adaptée, mais le but est de vous familiariser avec while.
+
+                var n = 0 ;
+                while (n <10){
+	                // alert('mon nombre = ' + n + ' . ');
+                    n++;
+
+                }
+
+        /* Ecrivez une boucle while qui se répète tant que l'utilisateur n'a pas entré une valeur correcte via prompt(). En d'autres mots, prompt() s'affiche à chaque exécution de la boucle. Si l'utilisateur entre quelque chose, la boucle s'arrête, et une alert() affiche la valeur entrée dans le prompt(). Si l'utilisateur clic sur Annuler ou ne rentre pas de texte, la boucle continue et réaffiche une nouvelle prompt(). */
+         
+            // var monNombre  =  prompt('entrez un nombre entre 0 et 15 ');
+            var monNombre = 5;
+            while ((monNombre >= 0) &&  (monNombre <= 15)) {
+                // alert(' mon nombre choisie est : ' + monNombre + ' .');
+               
+                monNombre++;
+            };
+
+            
+        /* 
+        Au sein du <div id="output"> se trouve un listing de messages privés (ce sont des MP que j'ai vraiment reçus). C'est structuré sous la forme d'une liste ordonnée (<ol>). Chaque élément <li> comprend une case à cocher ; deux boutons <button> sont présents pour cocher et décocher toutes les cases d'un coup ; ces deux boutons possèdent chacun un id.
+
+        Récupérez chacun de ces deux boutons et ajoutez-leur un gestionnaire d'évènement, et codez le système qui permet de cocher ou décocher toutes les cases. */
+            var monBouton1 = 'cocher'
+            var mnBouton2  = 'décocher'
+            if (monBouton1 == document.getElementById('cocher').addEventListener('click', click)){
+               document.querySelectorAll('.chek').addEventListener('click', click);
+            };
+                
+        function click(){
+                    alert('clické');
+                };
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             
     </script>
