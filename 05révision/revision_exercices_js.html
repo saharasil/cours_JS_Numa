@@ -112,10 +112,10 @@
         Au sein du <div id="output"> se trouve un listing de messages privés (ce sont des MP que j'ai vraiment reçus). C'est structuré sous la forme d'une liste ordonnée (<ol>). Chaque élément <li> comprend une case à cocher ; deux boutons <button> sont présents pour cocher et décocher toutes les cases d'un coup ; ces deux boutons possèdent chacun un id.
 
         Récupérez chacun de ces deux boutons et ajoutez-leur un gestionnaire d'évènement, et codez le système qui permet de cocher ou décocher toutes les cases. */
-            var monBouton1 = 'cocher'
-            var mnBouton2  = 'décocher'
-            if (monBouton1 == document.getElementById('cocher').addEventListener('click', click)){
-               document.querySelectorAll('.chek').addEventListener('click', click);
+            var bouton1 = 'cocher'
+            var bouton2  = 'décocher'
+            if (bouton1.addEventListener('click', click)){
+                 document.querySelectorAll('.chek').addEventListener('click', click);
             };
                 
         function click(){
